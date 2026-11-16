@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b32">
+  <meta name="description" content="Dashboard direktori camping dan glamping ramah keluarga di Bogor.">
+  <title>Bogor Camping Guide — Family Camping Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">⌁</span><span>BOGOR<span class="brand-light">CAMP</span><small>FAMILY CAMPING DIRECTORY</small></span></a>
+    <nav><a href="#explore">Explore</a><a href="#map">Area</a><a href="#notes">Catatan</a></nav>
+    <button class="share-btn" id="shareBtn">↗ <span>Share</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> CURATED OUTDOOR DIRECTORY · BOGOR</div>
+        <h1>Find your next<br><em>family escape.</em></h1>
+        <p>Direktori camping & glamping di berbagai koridor Bogor. Bandingkan rating, cek area, lalu buka lokasi langsung di Google Maps.</p>
+        <a class="hero-cta" href="#explore">Jelajahi tempat <b>↓</b></a>
+      </div>
+      <div class="hero-art" role="img" aria-label="Ilustrasi pegunungan dan tenda camping">
+        <div class="sun"></div><div class="mountain back"></div><div class="mountain front"></div>
+        <div class="tent"><span></span></div><div class="pine pine-one">♠</div><div class="pine pine-two">♠</div>
+        <div class="hero-stamp">BOGOR<br><strong>OUTDOORS</strong><small>EST. 2026</small></div>
+      </div>
+    </section>
+
+    <section class="stats" id="map">
+      <article><span class="stat-icon">⌖</span><div><strong id="totalPlaces">—</strong><small>Tempat terdata</small></div></article>
+      <article><span class="stat-icon">▦</span><div><strong>7</strong><small>Koridor Bogor</small></div></article>
+      <article><span class="stat-icon">★</span><div><strong id="ratedPlaces">—</strong><small>Memiliki rating awal</small></div></article>
+      <article><span class="stat-icon">♡</span><div><strong id="familyPlaces">—</strong><small>Kandidat family-friendly</small></div></article>
+    </section>
+
+    <section class="section" id="explore">
+      <div class="section-heading">
+        <div><div class="eyebrow dark">THE CAMPING DIRECTORY</div><h2>Explore camping spots</h2><p>Filter tempat berdasarkan area dan kebutuhan keluarga.</p></div>
+        <div class="view-toggle"><button class="active" id="gridView">▦ Grid</button><button id="listView">☷ List</button></div>
+      </div>
+      <div class="filters">
+        <label class="searchbox"><span>⌕</span><input id="searchInput" type="search" placeholder="Cari nama tempat atau kecamatan…"></label>
+        <select id="areaFilter" aria-label="Filter area"></select>
+        <select id="familyFilter" aria-label="Filter family friendly"><option value="all">Semua kategori</option><option value="yes">Family-friendly</option><option value="unknown">Perlu verifikasi keluarga</option></select>
+        <select id="sortFilter" aria-label="Urutkan"><option value="rating">Rating tertinggi</option><option value="reviews">Review terbanyak</option><option value="name">Nama A–Z</option></select>
+      </div>
+      <div class="result-line"><span id="resultCount">Memuat tempat…</span><button id="resetBtn">Reset filter ↺</button></div>
+      <div id="placesGrid" class="places-grid"></div>
+      <div id="emptyState" class="empty hidden">Tidak ada tempat yang cocok. Coba ubah filter pencarian.</div>
+    </section>
+
+    <section class="area-section">
+      <div class="section-heading"><div><div class="eyebrow dark">FIND YOUR AREA</div><h2>Explore by corridor</h2><p>Pilih koridor untuk memfilter daftar tempat.</p></div></div>
+      <div id="areaChips" class="area-chips"></div>
+    </section>
+
+    <section class="notice" id="notes">
+      <div class="notice-icon">!</div><div><strong>Catatan penting sebelum berangkat</strong><p>Rating, jumlah ulasan, dan deskripsi pada website ini adalah data awal hasil riset, bukan feed live Google Maps. Angka bisa berubah dan perlu dicek ulang melalui tautan Maps. Status “family-friendly” adalah shortlist awal, bukan sertifikasi keamanan.</p>
+      <ul><li>Konfirmasi harga, ketersediaan, fasilitas toilet, dan paket anak langsung ke pengelola.</li><li>Untuk lokasi dekat sungai/curug, cek pagar/pembatas, arus air, dan jarak tenda ke tepian.</li><li>Pastikan akses jalan, area parkir, dan kondisi kendaraan yang disarankan.</li></ul></div>
+    </section>
+    <footer><div class="brand footer-brand"><span class="brand-mark">⌁</span><span>BOGOR<span class="brand-light">CAMP</span><small>FAMILY CAMPING DIRECTORY</small></span></div><span>Made for the next family getaway · 2026</span><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Back to top ↑</a></footer>
+  </main>
+  <div class="toast" id="toast" role="status">Link berhasil disalin</div>
+  <script src="data.js"></script><script src="app.js"></script>
+</body></html>
